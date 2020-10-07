@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let firstNumber = +prompt("введите первое число");
+    let secondNumber = +prompt("введите второе число");
+    let operation = prompt("введите математическую операцию");
+
+    function result () {
+        if (operation === "+") {
+            console.log(firstNumber+secondNumber);
+        } else if (operation === "-") {
+            console.log(firstNumber-secondNumber);
+        } else if (operation === "*") {
+            console.log(firstNumber*secondNumber);
+        } else if (operation === "/") {
+            console.log(firstNumber/secondNumber);
+        }
+    }
+    result();
+
+    function isnan () {
+        if (typeof firstNumber !== 'number' || isNaN(firstNumber) || typeof secondNumber !=="number" || isNaN(secondNumber) || operation === "") {
+            alert("введите корректные данные");
+            firstNumber = +prompt("введите первое число", "91");
+            secondNumber = +prompt("введите второе число", "9");
+            operation = prompt("введите математическую операцию", "/");
+            result();
+        }
+    }
+    isnan();
+
+</script>
+</body>
+</html>
